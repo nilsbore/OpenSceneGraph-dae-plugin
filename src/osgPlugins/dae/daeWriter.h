@@ -49,8 +49,9 @@
 #include <dae.h>
 #include <dae/daeDocument.h>
 #include <dom/domChannel.h>
+#include <dom/domAny.h>
 
-
+/*
 class domCOLLADA;
 class domGeometry;
 class domInstance_geometry;
@@ -67,6 +68,7 @@ class domNode;
 class domSource;
 class domVisual_scene;
 class domP;
+*/
 
 namespace osgDAE {
 

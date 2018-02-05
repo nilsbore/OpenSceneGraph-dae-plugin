@@ -17,7 +17,9 @@
 #include <osg/Array>
 #include <osg/Notify>
 
-class domSource;
+#include <dom/domSource.h>
+
+//class domSource;
 
 namespace osgDAE {
 

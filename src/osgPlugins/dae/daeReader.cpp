@@ -20,6 +20,8 @@
 #include <osg/MatrixTransform>
 #include <osg/PositionAttitudeTransform>
 
+#include <map>
+
 using namespace osgDAE;
 
 daeReader::Options::Options() :
@@ -295,7 +297,7 @@ bool daeReader::convert( std::istream& fin )
     std::vector<char> buffer(length);
     fin.read(&buffer[0], length);
 
-    _document = _dae->openFromMemory(fileURI, &buffer[0]);
+    _document = static_cast<ColladaDOM141::domCOLLADA*>(_dae->openFromMemory(fileURI, &buffer[0]));
 
     return processDocument (fileURI);
 }
@@ -304,7 +306,7 @@ bool daeReader::convert( const std::string &fileURI )
 {
     clearCaches();
 
-    _document = _dae->open(fileURI);
+    _document = static_cast<ColladaDOM141::domCOLLADA*>(_dae->open(fileURI));
 
     return processDocument (fileURI);
 }

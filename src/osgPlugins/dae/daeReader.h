@@ -15,6 +15,7 @@
 #define _DAE_CONV_H_
 
 #include <string>
+#include <map>
 
 #include <dae.h>
 #include <dae/daeURI.h>
@@ -22,6 +23,7 @@
 #include <dom/domCommon_color_or_texture_type.h>
 #include <dom/domInputLocalOffset.h>
 #include <dom/domInstance_controller.h>
+#include <dom/domAny.h>
 
 #include <osg/Node>
 #include <osg/Notify>
@@ -35,11 +37,15 @@
 #include <osgAnimation/Bone>
 #include <osgAnimation/Skeleton>
 
+
+//using namespace ColladaDOM141;
+
+/*
 class domBind_material;
 class domCamera;
 //class domCommon_color_or_texture_type;
 class domCommon_float_or_param_type;
-class domGeometry;
+//class domGeometry;
 class domInstance_controller;
 class domInstance_geometry;
 class domInstanceWithExtra;
@@ -54,6 +60,7 @@ class domSkew;
 class domTranslate;
 class domRotate;
 class domVisual_scene;
+*/
 
 namespace osgDAE
 {
@@ -237,6 +244,7 @@ public:
         InterpolationType interpolation;
     };
 
+    typedef domGeometry* dummy_d;
     typedef std::map<domGeometry*, osg::ref_ptr<osg::Geode> >    domGeometryGeodeMap;
     typedef std::map<domMaterial*, osg::ref_ptr<osg::StateSet> > domMaterialStateSetMap;
     typedef std::map<std::string, osg::ref_ptr<osg::StateSet> >    MaterialStateSetMap;
